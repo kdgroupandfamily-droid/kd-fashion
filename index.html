@@ -1,220 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KD Fashion | Premium Clothing & Footwear</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KD Fashion offers premium clothing, footwear, and accessories for men, women, boys, girls, and kids. Shop stylish outfits, shoes, and more at best prices with new launches and exclusive deals.">
+    <meta name="keywords" content="fashion, clothing, footwear, accessories, men shirts, women dresses, kids toys, sports shoes, sneakers, bags, watches">
+    <meta property="og:title" content="KD Fashion | Premium Clothing, Footwear & Accessories">
+    <meta property="og:description" content="Discover high-quality fashion items for the whole family, including new launches and best sellers.">
+    <meta property="og:image" content="https://example.com/og-image.jpg"> <!-- Replace with actual OG image -->
+    <meta property="og:url" content="https://kdgroupandfamily-droid.github.io">
+    <title>KD Fashion | Premium Clothing, Footwear & Accessories</title>
+    <link rel="icon" href="https://example.com/favicon.ico" type="image/png"> <!-- Replace with actual favicon -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: #fdfdfd; color: #333; }
+        
+        /* HEADER */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.1);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo h2 span { color: #ff4757; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a { text-decoration: none; color: #333; font-weight: 600; }
+        .search-box { position: relative; }
+        .search-box input {
+            padding: 10px 15px; border: 1px solid #ddd; border-radius: 25px; width: 260px;
+        }
+        .nav-icons { font-size: 20px; cursor: pointer; position: relative; display: flex; gap: 20px; }
+        .cart-count { position: absolute; top: -5px; right: -10px; background: #ff4757; color: #fff; border-radius: 50%; padding: 2px 6px; font-size: 12px; }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        /* BANNER */
+        .banner { background: #ff4757; color: #fff; text-align: center; padding: 40px 5%; margin-bottom: 20px; }
+        .banner h1 { font-size: 36px; }
+        .banner p { font-size: 18px; }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#fdfdfd;color:#333}
+        /* CONTAINER */
+        .container { padding: 50px 5%; text-align: center; }
 
-/* HEADER */
-header{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:15px 5%;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1);
-  position:sticky;top:0;z-index:1000
-}
-.logo h2 span{color:#ff4757}
-.search-box input{
-  padding:10px 15px;border:1px solid #ddd;border-radius:25px;width:260px
-}
-.nav-icons{font-size:20px}
+        /* GRID */
+        .product-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px; margin-top: 30px;
+        }
+        .product-card {
+            background: #fff; border-radius: 15px; padding: 15px; text-align: left;
+            box-shadow: 0 5px 15px rgba(0,0,0,.06);
+        }
+        .product-card img {
+            width: 100%; height: 220px; object-fit: cover; border-radius: 10px;
+        }
+        .product-card h3 { margin: 10px 0 6px; font-size: 17px; }
+        .rating { color: #f1c40f; font-size: 14px; }
+        .badge {
+            display: inline-block; margin-top: 6px; background: #ff6b6b; color: #fff;
+            padding: 4px 10px; border-radius: 20px; font-size: 12px;
+        }
+        .price { color: #ff4757; font-weight: 600; margin-top: 6px; }
+        .old-price { color: #999; text-decoration: line-through; font-size: 13px; margin-left: 6px; }
+        .buy-btn {
+            display: block; margin-top: 14px; padding: 10px; text-align: center;
+            background: #ff4757; color: #fff; border-radius: 6px; text-decoration: none;
+            cursor: pointer;
+        }
+        .buy-btn.out-of-stock { background: #aaa; cursor: not-allowed; }
 
-/* CONTAINER */
-.container{padding:50px 5%;text-align:center}
+        /* ABOUT SECTION */
+        .about { background: #f1f2f6; padding: 60px 5%; text-align: center; margin-top: 40px; }
+        .about p { max-width: 800px; margin: 20px auto; line-height: 1.6; }
 
-/* GRID */
-.product-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:28px;margin-top:30px
-}
-.product-card{
-  background:#fff;border-radius:15px;padding:15px;text-align:left;
-  box-shadow:0 5px 15px rgba(0,0,0,.06)
-}
-.product-card img{
-  width:100%;height:220px;object-fit:cover;border-radius:10px
-}
-.product-card h3{margin:10px 0 6px;font-size:17px}
-.rating{color:#f1c40f;font-size:14px}
-.badge{
-  display:inline-block;margin-top:6px;background:#ff6b6b;color:#fff;
-  padding:4px 10px;border-radius:20px;font-size:12px
-}
-.price{color:#ff4757;font-weight:600;margin-top:6px}
-.old-price{color:#999;text-decoration:line-through;font-size:13px;margin-left:6px}
-.buy-btn{
-  display:block;margin-top:14px;padding:10px;text-align:center;
-  background:#aaa;color:#fff;border-radius:6px;text-decoration:none;
-  cursor:not-allowed
-}
+        /* NEWSLETTER */
+        .newsletter {
+            background: #f1f2f6; padding: 60px 5%; text-align: center; margin-top: 40px;
+        }
+        .newsletter form { margin-top: 20px; }
+        .newsletter input {
+            padding: 12px 18px; width: 260px; border-radius: 25px 0 0 25px; border: 1px solid #ccc;
+        }
+        .newsletter button {
+            padding: 12px 25px; border: none; background: #ff4757; color: #fff;
+            border-radius: 0 25px 25px 0; font-weight: bold; cursor: pointer;
+        }
 
-/* NEWSLETTER */
-.newsletter{
-  background:#f1f2f6;padding:60px 5%;text-align:center;margin-top:40px
-}
-.newsletter input{
-  padding:12px 18px;width:260px;border-radius:25px 0 0 25px;border:1px solid #ccc
-}
-.newsletter button{
-  padding:12px 25px;border:none;background:#ff4757;color:#fff;
-  border-radius:0 25px 25px 0;font-weight:bold
-}
+        /* FOOTER */
+        footer { background: #1e1e1e; color: #bbb; padding: 50px 5% 20px; }
+        .footer-content { display: flex; flex-wrap: wrap; gap: 30px; }
+        .footer-section { flex: 1; min-width: 240px; }
+        .footer-section h4 { color: #ff4757; margin-bottom: 15px; }
+        .footer-section p, li { list-style: none; line-height: 2; font-size: 14px; }
+        .footer-section a { color: #bbb; text-decoration: none; }
+        .social-icons { display: flex; gap: 15px; }
+        .social-icons a { font-size: 20px; color: #bbb; }
+        .copyright {
+            margin-top: 30px; border-top: 1px solid #333; padding-top: 20px;
+            text-align: center; font-size: 13px;
+        }
 
-/* FOOTER */
-footer{background:#1e1e1e;color:#bbb;padding:50px 5% 20px}
-.footer-content{display:flex;flex-wrap:wrap;gap:30px}
-.footer-section{flex:1;min-width:240px}
-.footer-section h4{color:#ff4757;margin-bottom:15px}
-.footer-section p,li{list-style:none;line-height:2;font-size:14px}
-.copyright{
-  margin-top:30px;border-top:1px solid #333;padding-top:20px;
-  text-align:center;font-size:13px
-}
-</style>
+        /* Responsive */
+        @media (max-width: 768px) {
+            header { flex-direction: column; }
+            nav ul { flex-direction: column; margin-top: 10px; }
+            .search-box input { width: 100%; }
+            .nav-icons { margin-top: 10px; }
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
-  <div class="logo"><h2>KD <span>Fashion</span></h2></div>
-  <div class="search-box"><input type="text" placeholder="Search products…"></div>
-  <div class="nav-icons">🛒</div>
+    <div class="logo"><h2>KD <span>Fashion</span></h2></div>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#men-clothing">Men</a></li>
+            <li><a href="#women-clothing">Women</a></li>
+            <li><a href="#kids-clothing">Kids</a></li>
+            <li><a href="#shoes">Shoes</a></li>
+            <li><a href="#accessories">Accessories</a></li>
+        </ul>
+    </nav>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search products…" onkeyup="searchProducts()">
+    </div>
+    <div class="nav-icons">
+        <span id="wishlistIcon">❤️</span>
+        <span id="cartIcon">🛒 <span class="cart-count" id="cartCount">0</span></span>
+    </div>
 </header>
 
-<div class="container">
-  <h1>Popular Picks 🔥</h1>
-  <p>Premium quality • Best launch pricing</p>
-
-  <div class="product-grid">
-
-    <!-- MEN -->
-    <div class="product-card">
-      <img src="images/men-tshirt.jpg">
-      <h3>Men Cotton T-Shirt</h3>
-      <div class="rating">⭐⭐⭐⭐☆ 4.6 (Popular)</div>
-      <span class="badge">🔥 High Demand – Out of Stock</span>
-      <div class="price">₹599 <span class="old-price">₹999</span></div>
-      <a class="buy-btn">Out of Stock</a>
-    </div>
-
-    <!-- WOMEN -->
-    <div class="product-card">
-      <img src="images/women-kurti.jpg">
-      <h3>Women Stylish Kurti</h3>
-      <div class="rating">⭐⭐⭐⭐⭐ 4.8 (Trending)</div>
-      <span class="badge">🔥 Launching Soon</span>
-      <div class="price">₹899 <span class="old-price">₹1,699</span></div>
-      <a class="buy-btn">Out of Stock</a>
-    </div>
-
-    <!-- BOYS -->
-    <div class="product-card">
-      <img src="images/boys-tshirt.jpg">
-      <h3>Boys Casual T-Shirt</h3>
-      <div class="rating">⭐⭐⭐⭐☆ 4.5 (Loved)</div>
-      <span class="badge">🔥 Out of Stock</span>
-      <div class="price">₹499 <span class="old-price">₹799</span></div>
-      <a class="buy-btn">Out of Stock</a>
-    </div>
-
-    <!-- GIRLS -->
-    <div class="product-card">
-      <img src="images/girls-frock.jpg">
-      <h3>Girls Party Frock</h3>
-      <div class="rating">⭐⭐⭐⭐☆ 4.6 (Popular)</div>
-      <span class="badge">🔥 High Demand</span>
-      <div class="price">₹699 <span class="old-price">₹1,199</span></div>
-      <a class="buy-btn">Out of Stock</a>
-    </div>
-
-  </div>
-
-  <!-- SHOES SECTION -->
-  <h2 style="margin-top:60px;">👟 Shoes Collection</h2>
-  <p>Complete footwear range for everyone</p>
-
-  <div class="product-grid">
-
-    <!-- MEN SHOES -->
-    <div class="product-card">
-      <img src="images/men-sports-shoes.jpg">
-      <h3>Men Sports Shoes</h3>
-      <div class="rating">⭐⭐⭐⭐☆ 4.6 (Popular)</div>
-      <span class="badge">🔥 High Demand – Out of Stock</span>
-      <div class="price">₹1,499 <span class="old-price">₹2,999</span></div>
-      <a class="buy-btn">Out of Stock</a>
-    </div>
-
-    <div class="product-card">
-      <img src="images/men-sneakers.jpg">
-      <h3>Men Sneakers</h3>
-      <div class="rating">⭐⭐⭐⭐⭐ 4.7 (Trending)</div>
-      <span class="badge">🔥 Launching Soon</span>
-      <div class="price">₹1,499 <span class="old-price">₹2,799</span></div>
-      <a class="buy-btn">Out of Stock</a>
-    </div>
-
-    <!-- WOMEN SHOES -->
-    <div class="product-card">
-      <img src="images/women-heels.jpg">
-      <h3>Women High Heels</h3>
-      <div class="rating">⭐⭐⭐⭐☆ 4.5 (Loved)</div>
-      <span class="badge">🔥 Out of Stock</span>
-      <div class="price">₹1,199 <span class="old-price">₹2,199</span></div>
-      <a class="buy-btn">Out of Stock</a>
-    </div>
-
-    <div class="product-card">
-      <img src="images/women-sneakers.jpg">
-      <h3>Women Sneakers</h3>
-      <div class="rating">⭐⭐⭐⭐⭐ 4.8 (Trending)</div>
-      <span class="badge">🔥 High Demand</span>
-      <div class="price">₹1,399 <span class="old-price">₹2,599</span></div>
-      <a class="buy-btn">Out of Stock</a>
-    </div>
-
-    <!-- KIDS SHOES -->
-    <div class="product-card">
-      <img src="images/kids-shoes.jpg">
-      <h3>Kids Sports Shoes</h3>
-      <div class="rating">⭐⭐⭐⭐☆ 4.6 (Popular)</div>
-      <span class="badge">🔥 Restocking Soon</span>
-      <div class="price">₹899 <span class="old-price">₹1,499</span></div>
-      <a class="buy-btn">Out of Stock</a>
-    </div>
-
-  </div>
+<div class="banner">
+    <h1>Welcome to KD Fashion</h1>
+    <p>Your one-stop shop for premium clothing, footwear, and accessories. New launches every week!</p>
 </div>
 
-<section class="newsletter">
-  <h2>Get Updates 📩</h2>
-  <p>Be the first to know when products are available</p>
-  <div style="margin-top:20px;">
-    <input type="email" placeholder="Your email">
-    <button>Notify Me</button>
-  </div>
-</section>
+<div class="container">
+    <h1 id="men-clothing">Men's Collection 👕</h1>
+    <p>Stylish outfits for every occasion</p>
+    <div class="product-grid" id="productGrid">
 
-<footer>
-  <div class="footer-content">
-    <div class="footer-section">
-      <h4>KD Fashion</h4>
-      <p>Premium clothing & footwear brand focused on quality and style.</p>
-    </div>
-    <div class="footer-section">
-      <h4>Contact</h4>
-      <p>📍 Prayagraj, Uttar Pradesh, India</p>
-      <p>📧 <a href="mailto:kdgroupandfamily@gmail.com" style="color:#bbb;">kdgroupandfamily@gmail.com</a></p>
-    </div>
-  </div>
-  <div class="copyright">
-    © 2026 KD Fashion. All Rights Reserved.
-  </div>
-</footer>
+        <div class="product-card" data-name="Men Cotton T-Shirt">
+            <img src="https://cdn.thewirecutter.com/wp-content/media/2025/09/BEST-MENS-WHITE-TEES-SUB-2048px-7696.jpg?auto=webp&quality=75&width=1024" alt="Men Cotton T-Shirt">
+            <h3>Men Cotton T-Shirt</h3>
+            <div class="rating">★★★★☆ 4.6</div>
+            <span class="badge">🔥 High Demand</span>
+            <div class="price">₹599 <span class="old-price">₹999</span></div>
+            <a class="buy-btn" onclick="addToCart('Men Cotton T-Shirt')">Add to Cart</a>
+        </div>
 
-</body>
-        </html>
+        <div class="product-card" data-name="Men Formal Shirt">
+            <img src="https://m.media-amazon.com/images/I/61aT6yA4vZL._AC_UL1500_.jpg" alt="Men Formal Shirt">
+            <h3>Men Formal Shirt</h3>
+            <div class="rating">★★★★★ 4.8</div>
+            <span class="badge">🆕 New Launch</span>
+            <div class="price">₹799 <span class="old-price">₹1299</span></div>
+            <a class="buy-btn" onclick="addToCart('Men Formal Shirt')">Add to Cart</a>
+        </div>
+
+        <div class="product-card" data-name="Men Jeans Pants">
+            <img src="https://m.media-amazon.com/images/I/81h3C3uo8aL._AC_UL1500_.jpg" alt="Men Jeans Pants">
+            <h3>Men Jeans Pants</h3>
+            <div class="rating">★★★★☆ 4.5</div>
+            <span class="badge">🔥 Out of Stock</span>
+            <div class="price">₹999 <span class="old-price">₹1999</span></div>
+            <a class="buy-btn out-of-stock">Out of Stock</a>
+        </div>
+
+        <div class="product-card" data-name="Men Jacket">
+            <img src="https://m.media-amazon.com/images/I/81Z8Jq4UufL._AC_UL1500_.jpg" alt="Men Jacket">
+            <h3>Men Winter Jacket</h3>
+            <div class="rating">★★★★★ 4.7</div>
+            <span class="badge">🆕 New Launch</span>
+            <div class="price">₹1499 <span class="old-price">₹2499</span></div>
+            <a class="buy-btn" onclick="addToCart('Men Jacket')">Add to Cart</a>
+        </div>
+
+    </div>
+
+    <h1 id="women-clothing" style="margin-top:60px;">Women's Collection 👗</h1>
+    <p>Elegant and trendy apparel</p>
+    <div class="product-grid">
+
+        <div class="product-card" data-name="Women Stylish Kurti">
+            <img src="https://cloudtailor-cdn.s3.ap-south-1.amazonaws.com/blogs/Kurtis-for-Women-Latest-Trend-of-Indian-Fashion.jpg" alt="Women Stylish Kurti">
+            <h3>Women Stylish Kurti</h3>
+            <div class="rating">★★★★★ 4.8</div>
+            <span class="badge">🆕 New Launch</span>
+            <div class="price">₹899 <span class="old-price">₹1699</span></div>
+            <a class="buy-btn" onclick="addToCart('Women Stylish Kurti')">Add to Cart</a>
+        </div>
+
+        <div class="product-card" data-name="Women Saree">
+            <img src="https://m.media-amazon.com/images/I/61d5FSTgItL._AC_UL1500_.jpg" alt="Women Saree">
+            <h3>Women Silk Saree</h3>
+            <div class="rating">★★★★☆ 4.6</div>
+            <span class="badge">🔥 High Demand</span>
+            <div class="price">₹1199 <span class="old-price">₹2199</span></div>
+            <a class="buy-btn" onclick="addToCart('Women Saree')">Add to Cart</a>
+        </div>
+
+        <div class="product-card" data-name="Women Dress">
+            <img src="https://m.media-amazon.com/images/I/71Y2i0E5GtL._AC_UL1500_.jpg" alt="Women Dress">
+            <h3>Women Party Dress</h3>
+            <div class="rating">★★★★★ 4.9</div>
+            <span class="badge">🔥 Out of Stock</span>
+            <div class="price">₹999 <span class="old-price">₹1999</span></div>
+            <a class="buy-btn out-of-stock">Out of Stock</a>
+        </div>
+
+        <div class="product-card" data-name="Women Leggings">
+            <img src="https://m.media-amazon.com/images/I/61+5u3dKXEL._AC_UL1500_.jpg" alt="Women Leggings">
+            <h3>Women Cotton Leggings</h3>
+            <div class="rating">★★★★☆ 4.4</div>
+            <span class="badge">🆕 New Launch</span>
+            <div class="price">₹499 <span class="old-price">₹799</span></div>
+            <a class="buy-btn" onclick="addToCart('Women Leggings')">Add to Cart</a>
+        </div>
+
+    </div>
+
+    <h1 id="kids-clothing" style="margin-top:60px;">Kids' Collection 🧒</h1>
+    <p>Fun and comfortable clothing for boys and girls</p>
+    <div class="product-grid">
+
+        <!-- Boys -->
+        <div class="product-card" data-name="Boys Casual T-Shirt">
+            <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/9ba5e2aa-2152-49a6-927a-e81e1deca5a5.__CR0,0,600,450_PT0_SX600_V1___.jpg" alt="Boys Casual T-Shirt">
+            <h3>Boys Casual T-Shirt</h3>
+            <div class="rating">★★★★☆ 4.5</div>
+            <span class="badge">🔥 High Demand</span>
+            <div class="price">₹499 <span class="old-price">₹799</span></div>
+            <a class="buy-btn" onclick="addToCart('Boys Casual T-Shirt')">Add to Cart</a>
+        </div>
+
+        <div class="product-card" data-name="Boys Shorts">
+            <img src="https://m.media-amazon.com/images/I/71+0Z7-7JBL._AC_UL1500_.jpg" alt="Boys Shorts">
+            <h3>Boys Summer Shorts</h3>
+            <div class="rating">★★★★★ 4.7</div>
+            <span class="badge">🆕 New Launch</span>
+            <div class="price">₹399 <span class="old-price">₹699</span></div>
+            <a class="buy-btn" onclick="addToCart('Boys Shorts')">Add to Cart</a>
+        </div>
+
+        <!-- Girls -->
+        <div class="product-card" data-name="Girls Party Frock">
+            <img src="https://m.media-amazon.com/images/I/710FpWzrGPL._AC_UY1000_.jpg" alt="Girls Party Frock">
+            <h3>Girls Party Frock</h3>
+            <div class="rating">★★★★☆ 4.6</div>
+            <span class="badge">🔥 Out of Stock</span>
+            <div class="price">₹699 <span class="old-price">₹1199</span></div>
+            <a class="buy-btn out-of-stock">Out of Stock</a>
+        </div>
+
+        <div class="product-card" data-name="Girls Skirt">
+            <img src="https://m.media-amazon.com/images/I/81u0do0YJFL._AC_UL1500_.jpg" alt="Girls Skirt">
+            <h3>Girls Floral Skirt</h3>
+            <div class="rating">★★★★★ 4.8</div>
+            <span class="badge">🆕 New Launch</span>
+            <div class="price">₹599 <span class="old-price">₹999</span></div>
+            <a class="buy-btn" onclick="addToCart('Girls Skirt')">Add to Cart</a>
+        </div>
+
+        <!-- General Kids -->
+        <div class="product-card" data-name="Kids Hoodie">
+            <img src="https://m.media-amazon.com/images/I/71w+8W9-8ZL._AC_UL1500_.jpg" alt="Kids Hoodie">
+            <h3>Kids Unisex Hoodie</h3>
+            <div class="rating">★★★★☆ 4.5</div>
+            <span class="badge">🔥 High Demand</span>
+            <div class="price">₹799 <span class="old-price">₹1299</span></div>
+            <a class="buy-btn" onclick="addToCart('Kids Hoodie')">Add to Cart</a>
+        </div>
+
+    </div>
+
+    <h2 id="shoes" style="margin-top:60px;">👟 Shoes Collection</h2>
+    <p>Complete footwear range for everyone</p>
+    <div class="product-grid">
+
+        <div class="product-card" data-name="Men Sports Shoes">
+            <img src="https://cdn.runrepeat.com/storage/gallery/buying_guide_primary/273/273-best-running-shoes-for-men-15748471-main.jpg" alt="Men Sports Shoes">
+            <h3>Men Sports Shoes</h3>
+            <div class="rating">★★★★☆ 4.6</div>
+            <span class="badge">🔥 High Demand</span>
+            <div class="price">₹1499 <span class="old-price">₹2999</span></div>
+            <a class="buy-btn" onclick="addToCart('Men Sports Shoes')">Add to Cart</a>
+        </div>
+
+        <div class="product-card" data-name="Men Sneakers">
+            <img src="https://m.media-amazon.com/images/I/81suTt3cKTL._AC_UY900_.jpg" alt="Men Sneakers">
+            <h3>Men Casual Sneakers</h3>
+            <div class="rating">★★★★★ 4.7</div>
+            <span class="badge">🆕 New Launch</span>
+            <div class="price">₹1499 <span class="old-price">₹2799</span></div>
+            <a class="buy-btn" onclick="addToCart('Men Sneakers')">Add to Cart</a>
+        </div>
+
+        <div class="product-card" data-name="Women High Heels">
+            <img src="https://m.media-amazon.com/images/I/41yYgqlGrAL._AC_UY900_.jpg" alt="Women High Heels">
+            <h3>Women High Heels</h3>
+            <div class="rating">★★★★☆ 4.5</div>
+            <span class="badge">🔥 Out of Stock</span>
+            <div class="price">₹1199 <span class="old-price">₹2199</span></div>
+            <a class="buy-btn out-of-stock">Out of Stock</a>
+        </div>
+
+        <div class="product-card" data-name="Women Sneakers">
+            <img src="https://m.media-amazon.com/images/I/71xtt1N1F2L._AC_UY900_.jpg" alt="Women Sneakers">
+            <h3>Women Fashion Sneakers</h3>
+            <div class="rating">★★★★★ 4.8</div>
+            <span class="badge">🆕 New Launch</span>
+            <div class="price">₹1399 <span class="old-price">₹2599</span></div>
+            <a class="buy-btn" onclick="addToCart('Women Sneakers')">Add to Cart</a>
+        </div>
+
+        <div class="product-card" data-name="Kids Sports Shoes">
+            <img src="https://m.media-amazon.com/images/I/71b+Ku-36eL._AC_UY900_.jpg" alt="Kids Sports Shoes">
+            <h3>Kids Sports Shoes</h3>
+            <div class="rating">★★★★☆ 4.6</div>
+            <span class="badge">🔥 High Demand</span>
+            <div class="price">₹899 <span class="old-price">₹1499</span></div>
+            <a class="buy-btn" onclick="addToCart('Kids Sports Shoes')">Add to Cart</a>
+        </div>
+
+        <div class="product-card" data-name="Boys Sandals">
+            <img src="https://m.media-amazon.com/images/I/71kZfHWujPL._AC_UL1500_.jpg" alt="Boys Sandals">
+            <h3>Boys Summer Sandals</h3>
+            <div class="rating">★★★★★ 4.7</div>
+            <span class="badge">🆕 New Launch</span>
+            <div class="price">₹599 <span class="old-price">₹999</span></div>
+            <a class="buy-btn" onclick="addToCart('Boys Sandals')">Add to Cart</a>
+        </div>
+
+        <div class="product-card" data-name="Girls Flats">
+            <img src="https://m.media-amazon.com/images/I/61Z5J3q3I+L._AC_UL1500_.jpg" alt="Girls Flats">
+            <h3>Girls Ballet Flats</h3>
+            <div class="rating">★★★★☆ 4.5</div>
+            <span class="badge">🔥 Out of Stock</span>
+            <div class="price">₹699 <span class="old-price">₹1199</span></div>
+            <a class="buy-btn out-of-stock">Out of Stock</a>
+        </div>
+
+    </div>
+
+    <h2 id="accessories" style="margin-top:60px;">👜 Accessories Collection</h2>
+    <p>Complete your look with our premium accessories</p>
+    <div class="product-grid">
+
+        <div class="product-card" data-name="Men Watch">
+            <img src="https://m.media-amazon.com/images/I/71E5zB1qbIL._AC_UL1500_.jpg" alt="Men Watch">
+            <h3>Men Analog Watch</h3>
+            <div class="rating">★★★★★ 4.8</div>
+            <span class="badge">🆕 New Launch</span>
+            <div class="price">₹1999 <span class="old-price">₹3499</span></div>
+            <a class="buy-btn" onclick="addToCart('Men Watch')">Add to Cart</a>
+        </div>
+
+        <div class="product-card" data-name="Women Handbag">
+            <img src="https://m.media-amazon.com/images/I/71m05O2cdoL._AC_UL1500_.jpg" alt="Women Handbag">
+            <h3>Women Leather Handbag</h3>
+            <div class="rating">★★★★☆ 4.6</div>
+            <span class="badge">🔥 High Demand</span>
+            <div class="price">₹1299 <span class="old-price">₹2299</span></div>
+            <a class="buy-btn" onclick="addToCart('Women Handbag')">Add to Cart</a>
+        </div>
+
+        <div class="product-card" data-name="Kids Backpack">
+            <img src="https://m.media-amazon.com/images/I/81o3k4u4QEL._AC_UL1500_.jpg" alt="Kids Backpack">
+            <h3>Kids School Backpack</h3>
+            <div class="rating">★★★★★ 4.7</div>
+            <span class="badge">🔥 Out of Stock</span>
+            <div class="price">₹799 <span class="old-price">₹1499</span></div>
+            <a class="buy-btn out-of-stock">Out of Stock</a>
+        </div>
+
+        <div class="product-card" data-name="Sunglasses">
+            <img src="https://m.media-amazon.com/images/I/51EG562VGSL._AC_UL1500_.jpg" alt="Sunglasses">
+            <h3>Unisex Sunglasses</h3>
+            <div class="rating">★★★★☆ 4.5</div>
+            <span class="badge">🆕 New Launch</span>
+            <div class="price">₹499 <span class="old-price">₹999</span></div>
+            <a class="buy-btn" onclick="addToCart('Sunglasses')">Add to Cart</a>
+        </div>
+
+        <div class="product-card" data-name="Belt">
+            <img src="https://m.media-amazon.com/images/I/71xxHmpvJBL._AC_UL1500_.jpg" alt="Belt">
+            <h3>Men Leather Belt</h3>
+            <div class="rating">★★★★★ 4.9</div>
+            <span class="badge">🔥 High Demand</span>
+            <div class="price">₹399 <span class="old-price">₹699</span></div>
+            <a class="buy-btn" onclick="addToCart('Belt')">Add to Cart</a>
+        </div>
+
+    </div>
+</div>
+
+<section class="about">
+    <h2>About KD Fashion</h2>
+    <p>KD Fashion is a premium brand dedicated to providing high-quality clothing, foo
