@@ -398,4 +398,93 @@
 
 <section class="about">
     <h2>About KD Fashion</h2>
-    <p>KD Fashion is a premium brand dedicated to providing high-quality clothing, foo
+    <p>KD Fashion is a premium brand dedicated to providing high-quality clothing,   footwear, and accessories for the entire family. Established in Prayagraj, we focus on style, comfort, and affordability. Our new launches keep you ahead in fashion trends.</p>
+</section>
+
+<section class="newsletter">
+    <h2>Get Updates 📩</h2>
+    <p>Be the first to know about new launches and exclusive deals</p>
+    <form id="newsletterForm">
+        <input type="email" id="emailInput" placeholder="Your email" required>
+        <button type="submit">Notify Me</button>
+    </form>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>KD Fashion</h4>
+            <p>Premium clothing & footwear brand focused on quality and style.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Shipping & Returns</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <p>📍 Prayagraj, Uttar Pradesh, India</p>
+            <p>📧 <a href="mailto:kdgroupandfamily@gmail.com">kdgroupandfamily@gmail.com</a></p>
+            <p>📞 +91 1234567890</p>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <a href="#">📘</a>
+                <a href="#">🐦</a>
+                <a href="#">📸</a>
+                <a href="#">▶️</a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        © <span id="year"></span> KD Fashion. All Rights Reserved.
+    </div>
+</footer>
+
+<script>
+    // Dynamic Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Search Functionality
+    function searchProducts() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const cards = document.querySelectorAll('.product-card');
+        cards.forEach(card => {
+            const name = card.getAttribute('data-name').toLowerCase();
+            card.style.display = name.includes(input) ? '' : 'none';
+        });
+    }
+
+    // Cart Functionality
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    updateCartCount();
+
+    function addToCart(productName) {
+        cart.push(productName);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        alert(`${productName} added to cart!`);
+    }
+
+    function updateCartCount() {
+        document.getElementById('cartCount').textContent = cart.length;
+    }
+
+    // Newsletter Submit
+    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('emailInput').value;
+        if (email) {
+            alert(`Thank you! You'll get updates on ${email}.`);
+            // Integrate with real API like Mailchimp in production
+        }
+    });
+</script>
+
+</body>
+</html>
